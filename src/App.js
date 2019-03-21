@@ -3,13 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 import Layoutmain from './layout/demoLayout';
 import Demo_hook from './pages/demo_hook/index.js';
+import {BrowserRouter} from 'react-router-dom';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Layoutmain/>
-        {/* <Demo_hook /> */}
-      </div>
+      <BrowserRouter>
+           <div className="App">
+            <Layoutmain/>
+          </div>
+      </BrowserRouter>
     )
   }
 }
