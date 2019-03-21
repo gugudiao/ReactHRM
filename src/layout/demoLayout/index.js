@@ -10,7 +10,7 @@ const {Footer,Sider,Content} = Layout;
 export default class Layoutmain extends React.Component{
     render(){
         return (
-            <div> <Router>
+            <div> 
                     <Layout className="layout">
                         <Header>
                             <div className="logo" >
@@ -36,7 +36,7 @@ export default class Layoutmain extends React.Component{
                         <Footer style={{ textAlign: 'center' }}>
                             中国工商银行版权所有                                                                        
                         </Footer>
-                    </Layout></Router>
+                    </Layout>
             </div>
         );
     }
