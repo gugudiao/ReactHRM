@@ -3,12 +3,13 @@ import {Layout,Card, Menu, Breadcrumb} from'antd';
 import { Link, NavLink, BrowserRouter as Router} from 'react-router-dom';
 import './index.less';
 import Root from './../../router/Routes';
+import {withRouter} from 'react-router-dom';
 const Header = Layout.Header;
 const {Footer,Sider,Content} = Layout;
 
-
-export default class Layoutmain extends React.Component{
+ class Layoutmain extends React.Component{
     render(){
+
         return (
             <div> 
                     <Layout className="layout">
@@ -41,3 +42,4 @@ export default class Layoutmain extends React.Component{
         );
     }
 }
+export default withRouter(Layoutmain);
