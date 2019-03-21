@@ -10,6 +10,7 @@ class App extends Component {
         <Layoutmain/>
         {/* <Demo_hook /> */}
       </div>
+    )
   }
 }
 
