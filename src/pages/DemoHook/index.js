@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
-import SayHi from './compontents/hook'
-class Demo_hook extends Component {
+import SayHi from './compontents/Hook'
+class DemoHook extends Component {
   constructor(props,context){
     //构造函数 初始化
     super(props,context) //必须要写，否则this指向会出问题
@@ -13,10 +13,10 @@ class Demo_hook extends Component {
   }
   render() {
     return (
-      <div className="demo_hook" onClick={this.click_test}>
-        <header className="demo_hook-header">
+      <div className="demo-hook" onClick={this.click_test}>
+        <header className="demo-hook-header">
           <p>
-            Edit <code>src/demo_hook.js</code> and save to reload.
+            Edit <code>src/demo-hook.js</code> and save to reload.
           </p>
           {this.state.onShow?(<SayHi context={this.state.context} dontChange={this.state.dontChange}/>):''}
           {
@@ -27,7 +27,7 @@ class Demo_hook extends Component {
             )
           }
           <a
-            className="demo_hook-link"
+            className="demo-hook-link"
             href="https://reactjs.org"
             target="_blank"
             rel="noopener noreferrer"
@@ -56,4 +56,4 @@ class Demo_hook extends Component {
   }
 }
 
-export default Demo_hook;
+export default DemoHook;
