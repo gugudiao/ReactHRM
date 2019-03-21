@@ -22,7 +22,7 @@ const {Footer,Sider,Content} = Layout;
                                 theme="dark"
                                 mode="horizontal"
                                 defaultSelectedKeys={[this.props.history.location.pathname]}
-                                style={{ lineHeight: '38px' }}
+                                style={{ lineHeight: '38px',float: 'left', marginLeft: '10px'}}
                             >
                                 <Menu.Item key="/workerService"><Link to={{ pathname: '/workerService'}}>员工服务</Link></Menu.Item>
                                 <Menu.Item key="/smartManage"><Link to={{ pathname: '/smartManage'}}>智慧管理</Link></Menu.Item>
