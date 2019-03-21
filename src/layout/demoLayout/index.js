@@ -12,7 +12,7 @@ export default class Layoutmain extends React.Component{
         return (
             <div> <Router>
                     <Layout className="layout">
-                        <Header class='layout-head'>
+                        <Header className='layout-head'>
                             <div className="logo" >
                                 ICBC人力资源管理系统
                             </div>
