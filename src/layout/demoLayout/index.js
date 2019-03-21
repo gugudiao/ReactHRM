@@ -12,7 +12,7 @@ export default class Layoutmain extends React.Component{
         return (
             <div> <Router>
                     <Layout className="layout">
-                        <Header>
+                        <Header class='layout-head'>
                             <div className="logo" >
                                 ICBC人力资源管理系统
                             </div>
@@ -27,7 +27,7 @@ export default class Layoutmain extends React.Component{
                             <Menu.Item key="3"><Link to={{ pathname: '/workDo'}}>业务处理</Link></Menu.Item>
                         </Menu>
                         </Header>
-                        <Content style={{ padding: '30px 50px 0px 50px' }}>
+                        <Content style={{ padding: '30px 50px 0px 50px',marginTop:'64px' }}>
                             <div style={{ background: '#fff', padding: 24, minHeight: 800 }}>
                             
                                 <Root />
