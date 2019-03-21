@@ -29,8 +29,8 @@ const {Footer,Sider,Content} = Layout;
                                 <Menu.Item key="/workDo"><Link to={{ pathname: '/workDo'}}>业务处理</Link></Menu.Item>
                             </Menu>
                             </Header>
-                            <Content style={{ padding: '30px 50px 0px 50px',marginTop:'64px' }}>
-                                <div style={{ background: '#fff', padding: 24, minHeight: 800 }}>
+                            <Content className="content">
+                                <div className="content-root">
                                 
                                     <Root />
                                 </div>
