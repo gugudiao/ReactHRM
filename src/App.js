@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
 import Layoutmain from './layout/demoLayout';
-import {BrowserRouter} from 'react-router-dom';
+import Demo_hook from './pages/DemoHook/index.js';
+import { Link, NavLink, BrowserRouter as Router} from 'react-router-dom';
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-           <div className="App">
+      <Router>
+        <div className="App"> 
             <Layoutmain/>
-          </div>
-      </BrowserRouter>
-      );
+            {/* <Demo_hook /> */}
+        </div>
+      </Router>
+    )
   }
 }
 
