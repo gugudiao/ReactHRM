@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Layoutmain from './layout/demoLayout';
-import DemoHook from './pages/DemoHook/index.js';
+import Demo_hook from './pages/DemoHook/index.js';
+import { Link, NavLink, BrowserRouter as Router} from 'react-router-dom';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Layoutmain/>
-        {/* <DemoHook /> */}
-      </div>
+      <Router>
+        <div className="App"> 
+            <Layoutmain/>
+            {/* <Demo_hook /> */}
+        </div>
+      </Router>
     )
   }
 }
