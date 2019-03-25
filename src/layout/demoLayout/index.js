@@ -23,6 +23,9 @@ const {Footer,Sider,Content} = Layout;
             })
         }
     }
+    componentWillMount=()=>{
+        console.log(this.props.location)
+    }
     handle=()=>{
         
         if (this.state.display_name == 'block') {
