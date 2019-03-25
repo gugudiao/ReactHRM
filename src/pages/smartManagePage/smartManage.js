@@ -12,13 +12,13 @@ export default class smartManage extends React.Component{
         return (
             <div>
                 <h2>智慧管理</h2> 
-                 <DatePicker style={{'margin-bottom':'20px'}} onChange={this.onChange} />
+                 <DatePicker style={{'marginBottom':'20px'}} onChange={this.onChange} />
                 <br />
-                <MonthPicker style={{'margin-bottom':'20px'}}  onChange={this.onChange} placeholder="Select month" />
+                <MonthPicker style={{'marginBottom':'20px'}}  onChange={this.onChange} placeholder="Select month" />
                 <br />
-                <RangePicker style={{'margin-bottom':'20px'}}  onChange={this.onChange} />
+                <RangePicker style={{'marginBottom':'20px'}}  onChange={this.onChange} />
                 <br />
-                <WeekPicker style={{'margin-bottom':'20px'}}  onChange={this.onChange} placeholder="Select week" />
+                <WeekPicker style={{'marginBottom':'20px'}}  onChange={this.onChange} placeholder="Select week" />
             </div>
         );
     }
