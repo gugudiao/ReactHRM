@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.less'
-import CardInfo from './../../compontents/CardInfo';
-import LanternSlide from './../../compontents/LanternSlide';
+import CardInfo from './../../components/CardInfo';
+import LanternSlide from './../../components/LanternSlide';
 export default class workerService extends React.Component{
     render(){
       

@@ -3,7 +3,7 @@ import {Layout} from'antd';
 import {withRouter} from 'react-router-dom';
 import './index.less';
 import Root from './../../router/Routes';
-import HeaderRoute from './../../compontents/HeaderRoute'
+import HeaderRoute from './../../components/HeaderRoute'
 import { connect } from 'react-redux';
 const Header = Layout.Header;
 const {Footer,Content} = Layout;
