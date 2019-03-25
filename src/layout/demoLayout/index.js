@@ -4,6 +4,8 @@ import { Link, NavLink, BrowserRouter as Router} from 'react-router-dom';
 import './index.less';
 import Root from './../../router/Routes';
 import {withRouter} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { switchMenuTheme } from './../../redux/actions/themeAction'
 const Header = Layout.Header;
 const {Footer,Sider,Content} = Layout;
 
@@ -21,6 +23,14 @@ const {Footer,Sider,Content} = Layout;
                 display_name: 'block',
                 display_old: 'none',
             })
+        }
+    }
+    handleMenuClick = ({item,key})=>{
+        let name = item.props.children.props.children
+        console.log(name);
+        console.log(this.props);
+        if(this.props.onSwitchColor){
+            this.props.onSwitchColor(name);
         }
     }
     handle=()=>{
@@ -44,6 +54,7 @@ const {Footer,Sider,Content} = Layout;
                         <Menu
                             theme="dark"
                             mode="horizontal"
+                            onClick={this.handleMenuClick}
                             defaultSelectedKeys={['1']}
                             style={{ lineHeight: '38px' }}
                         >
@@ -61,7 +72,7 @@ const {Footer,Sider,Content} = Layout;
                             <iframe id="content" style={{ background: '#fff', padding: 24, minHeight: 800, display:this.state.display_name }}>
                             </iframe>
                         </Content>
-                        <Footer style={{ textAlign: 'center' }}>
+                        <Footer style={{ textAlign: 'center' , color:this.props.contentColor}}>
                             中国工商银行版权所有                                                                        
                         </Footer>
                     </Layout>
@@ -69,4 +80,21 @@ const {Footer,Sider,Content} = Layout;
         );
     }
 }
-export default withRouter(Layoutmain);
+
+const mapStateToProps = (state) => {
+    return{
+        menuName: state.menuName,
+        contentColor: state.contentColor
+    }
+}
+
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        onSwitchColor:(menuName)=>{
+            dispatch(switchMenuTheme(menuName));
+        }
+    }
+}
+
+//export default withRouter(Layoutmain);
+export default connect(mapStateToProps,mapDispatchToProps)(Layoutmain);
