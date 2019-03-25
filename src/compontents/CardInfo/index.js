@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, notification,Row,Col,Carousel,Icon  } from 'antd';
+import { Row,Col,Icon  } from 'antd';
 import './index.less';
 
 export default  class CardInfo extends React.Component{

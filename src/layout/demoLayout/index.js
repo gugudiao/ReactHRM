@@ -1,11 +1,11 @@
 import React from 'react';
-import {Layout,Card, Menu, Breadcrumb} from'antd';
-import { Link, NavLink, BrowserRouter as Router} from 'react-router-dom';
+import {Layout} from'antd';
+import {withRouter} from 'react-router-dom';
 import './index.less';
 import Root from './../../router/Routes';
-import {withRouter} from 'react-router-dom';
+import HeaderRoute from './../../compontents/HeaderRoute'
 const Header = Layout.Header;
-const {Footer,Sider,Content} = Layout;
+const {Footer,Content} = Layout;
 
  class Layoutmain extends React.Component{
     constructor(props, context) {
@@ -15,53 +15,23 @@ const {Footer,Sider,Content} = Layout;
             display_old: 'block',
         }
     }
-    display_name() { //编辑按钮的单击事件，修改状态机display_name的取值
-        if (this.state.display_name == 'none') {
-            this.setState({
-                display_name: 'block',
-                display_old: 'none',
-            })
-        }
-    }
-    componentWillMount=()=>{
-        console.log(this.props.location)
-    }
-    handle=()=>{
-        
-        if (this.state.display_name == 'block') {
-            this.setState({
-                display_name: 'none',
-                display_old: 'block',
-            })      
-      }
-    }
+
+   
+  
     render(){
 
         return (
             <div> 
                     <Layout className="layout">
                         <Header>
-                            <div className="logo" >
-                                ICBC人力资源管理系统
-                            </div>
-                        <Menu
-                            theme="dark"
-                            mode="horizontal"
-                            defaultSelectedKeys={['1']}
-                            style={{ lineHeight: '38px' }}
-                        >
-                            <Menu.Item key="1"><Link to={{ pathname: '/workerService'}} onClick={this.handle}>员工服务</Link></Menu.Item>
-                            <Menu.Item key="2"><Link to={{ pathname: '/smartManage'}} onClick={this.handle}>智慧管理</Link></Menu.Item>
-                            <Menu.Item key="3"><Link to={{ pathname: '/workDo'}} onClick={this.handle}>业务处理</Link></Menu.Item>
-                            <Menu.Item key="4"><a href="/test.html" target="content" onClick={this.display_name.bind(this)}>test page</a></Menu.Item>
-                        </Menu>
+                            <HeaderRoute/>
                         </Header>
                         <Content style={{ padding: '30px 50px 0px 50px','marginBottom':'85px' }}>
                             <div style={{ background: '#fff', padding: 24, minHeight: 800, display:this.state.display_old,'borderRadius':'5px' }}>
                             
                                 <Root />
                             </div>
-                            <iframe id="content" style={{ background: '#fff', padding: 24, minHeight: 800, display:this.state.display_name }}>
+                            <iframe title='testIframe' id="content" style={{ background: '#fff', padding: 24, minHeight: 800, display:this.state.display_name }}>
                             </iframe>
                         </Content>
                         <Footer style={{ textAlign: 'center',"position":'fixed' }}>

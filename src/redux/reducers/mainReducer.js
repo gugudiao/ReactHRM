@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+
 import { type } from '../actions/themeAction';
 
 const contentTheme = (state,action) => {
