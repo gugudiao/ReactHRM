@@ -8,7 +8,7 @@
 
 import React, { Component } from 'react';
 import './index.css';
-import SayHi from './compontents/Hook'
+import SayHi from './components/Hook'
 class DemoHook extends Component {
   constructor(props,context){
     //构造函数 初始化

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button, notification,Row,Col,Carousel,Icon  } from 'antd';
 import './index.less'
-import CardInfo from './../../compontents/CardInfo';
-import LanternSlide from './../../compontents/LanternSlide';
+import CardInfo from './../../components/CardInfo';
+import LanternSlide from './../../components/LanternSlide';
 export default class workerService extends React.Component{
     render(){
         const openNotificationWithIcon = (type,data) => {
