@@ -53,15 +53,15 @@ const {Footer,Sider,Content} = Layout;
                             <Menu.Item key="4"><a href="/test.html" target="content" onClick={this.display_name.bind(this)}>test page</a></Menu.Item>
                         </Menu>
                         </Header>
-                        <Content style={{ padding: '30px 50px 0px 50px' }}>
-                            <div style={{ background: '#fff', padding: 24, minHeight: 800, display:this.state.display_old }}>
+                        <Content style={{ padding: '30px 50px 0px 50px','marginBottom':'85px' }}>
+                            <div style={{ background: '#fff', padding: 24, minHeight: 800, display:this.state.display_old,'borderRadius':'5px' }}>
                             
                                 <Root />
                             </div>
                             <iframe id="content" style={{ background: '#fff', padding: 24, minHeight: 800, display:this.state.display_name }}>
                             </iframe>
                         </Content>
-                        <Footer style={{ textAlign: 'center' }}>
+                        <Footer style={{ textAlign: 'center',"position":'fixed' }}>
                             中国工商银行版权所有                                                                        
                         </Footer>
                     </Layout>
