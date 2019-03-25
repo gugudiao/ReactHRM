@@ -25,14 +25,30 @@ class HeaderRoute extends React.Component{
         }
     }
     display_name() { //编辑按钮的单击事件，修改状态机display_name的取值
-        if (this.state.display_name === 'none') {
-            this.setState({
-                display_name: 'block',
-                display_old: 'none',
-            })
-        }
+        //alert(this.state.display_name);
+        const displayState = {
+            display_name: 'block',
+            display_old: 'none',
+            display_page: '/test.html',
+        };
+        this.props.getStates(displayState);
+        return false;
+        // if (this.state.display_name === 'none') {
+        //     this.setState({
+        //         display_name: 'block',
+        //         display_old: 'none',
+        //     },()=>{
+        //         //alert(this.state.display_name+"   "+this.state.display_old);
+        //     })
+        // }
     }
     handle=()=>{
+        const displayState = {
+            display_name: 'none',
+            display_old: 'block',
+            display: '/',
+        };
+        this.props.getStates(displayState);
     }
     render(){
         return(
@@ -49,7 +65,7 @@ class HeaderRoute extends React.Component{
                     <Menu.Item key="1"><Link to={{ pathname: '/workerService'}} onClick={this.handle}>员工服务</Link></Menu.Item>
                     <Menu.Item key="2"><Link to={{ pathname: '/smartManage'}} onClick={this.handle}>智慧管理</Link></Menu.Item>
                     <Menu.Item key="3"><Link to={{ pathname: '/workDo'}} onClick={this.handle}>业务处理</Link></Menu.Item>
-                    <Menu.Item key="4"><a href="/test.html" target="content" onClick={this.display_name.bind(this)}>test page</a></Menu.Item>
+                    <Menu.Item key="4"><span onClick={this.display_name.bind(this)}>test page</span></Menu.Item>
                     </Menu>
                 </div>
                 <div className='user-info'>user-info:张三</div>
