@@ -2,6 +2,9 @@ import React from 'react';
 import { Menu} from'antd';
 import { Link , withRouter} from 'react-router-dom';
 import './index.less';
+import { connect } from 'react-redux';
+import { switchMenuTheme } from './../../redux/actions/themeAction'
+
 class HeaderRoute extends React.Component{
     constructor(props, context) {
         super(props, context);
@@ -12,6 +15,14 @@ class HeaderRoute extends React.Component{
     }
     componentWillMount=()=>{
         console.log('当前路由信息',this.props.location)
+    }
+    handleMenuClick = ({item,key})=>{
+        let name = item.props.children.props.children
+        console.log(name);
+        console.log(this.props);
+        if(this.props.onSwitchColor){
+            this.props.onSwitchColor(name);
+        }
     }
     display_name() { //编辑按钮的单击事件，修改状态机display_name的取值
         if (this.state.display_name === 'none') {
@@ -32,6 +43,7 @@ class HeaderRoute extends React.Component{
                     <Menu
                     theme="dark"
                     mode="horizontal"
+                    onClick={this.handleMenuClick}
                     defaultSelectedKeys={['1']}
                 >
                     <Menu.Item key="1"><Link to={{ pathname: '/workerService'}} onClick={this.handle}>员工服务</Link></Menu.Item>
@@ -45,4 +57,19 @@ class HeaderRoute extends React.Component{
         )
     }
 }
-export default withRouter(HeaderRoute);
+const mapStateToProps = (state) => {
+    return{
+        
+    }
+}
+
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        onSwitchColor:(menuName)=>{
+            dispatch(switchMenuTheme(menuName));
+        }
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(HeaderRoute));
+//export default withRouter(HeaderRoute);

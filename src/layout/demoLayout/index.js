@@ -5,7 +5,6 @@ import './index.less';
 import Root from './../../router/Routes';
 import HeaderRoute from './../../compontents/HeaderRoute'
 import { connect } from 'react-redux';
-import { switchMenuTheme } from './../../redux/actions/themeAction'
 const Header = Layout.Header;
 const {Footer,Content} = Layout;
 
@@ -51,9 +50,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch)=>{
     return{
-        onSwitchColor:(menuName)=>{
-            dispatch(switchMenuTheme(menuName));
-        }
+
     }
 }
 
