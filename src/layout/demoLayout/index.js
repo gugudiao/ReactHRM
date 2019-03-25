@@ -4,6 +4,8 @@ import {withRouter} from 'react-router-dom';
 import './index.less';
 import Root from './../../router/Routes';
 import HeaderRoute from './../../compontents/HeaderRoute'
+import { connect } from 'react-redux';
+import { switchMenuTheme } from './../../redux/actions/themeAction'
 const Header = Layout.Header;
 const {Footer,Content} = Layout;
 
@@ -15,9 +17,6 @@ const {Footer,Content} = Layout;
             display_old: 'block',
         }
     }
-
-   
-  
     render(){
 
         return (
@@ -34,7 +33,7 @@ const {Footer,Content} = Layout;
                             <iframe title='testIframe' id="content" style={{ background: '#fff', padding: 24, minHeight: 800, display:this.state.display_name }}>
                             </iframe>
                         </Content>
-                        <Footer style={{ textAlign: 'center',"position":'fixed' }}>
+                        <Footer style={{ textAlign: 'center' , position:"fixed",color:this.props.contentColor}}>
                             中国工商银行版权所有                                                                        
                         </Footer>
                     </Layout>
@@ -42,4 +41,21 @@ const {Footer,Content} = Layout;
         );
     }
 }
-export default withRouter(Layoutmain);
+
+const mapStateToProps = (state) => {
+    return{
+        menuName: state.menuName,
+        contentColor: state.contentColor
+    }
+}
+
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        onSwitchColor:(menuName)=>{
+            dispatch(switchMenuTheme(menuName));
+        }
+    }
+}
+
+//export default withRouter(Layoutmain);
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(Layoutmain));
