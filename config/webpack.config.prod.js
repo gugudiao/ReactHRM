@@ -90,7 +90,14 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-      
+      '@': path.resolve(__dirname, './../src/'),
+      '@components': path.resolve(__dirname, './../src/components'),
+      '@services': path.resolve(__dirname, './../src/services'),
+      '@redux': path.resolve(__dirname, './../src/redux'),
+      '@layout': path.resolve(__dirname, './../src/layout'),
+      '@utils': path.resolve(__dirname, './../src/utils'),
+      '@pages': path.resolve(__dirname, './../src/pages'),
+      '@router': path.resolve(__dirname, './../src/router'),
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
