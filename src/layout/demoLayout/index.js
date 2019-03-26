@@ -27,7 +27,6 @@ const {Footer,Content} = Layout;
                         </Header>
                         <Content style={{ padding: '30px 50px 0px 50px','marginBottom':'85px' }}>
                             <div style={{ background: '#fff', padding: 24, minHeight: 800, display:this.state.display_old,'borderRadius':'5px' }}>
-                            
                                 <Root />
                             </div>
                             <iframe title='testIframe' id="content" style={{ background: '#fff', padding: 24, minHeight: 800, display:this.state.display_name }}>
