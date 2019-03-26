@@ -39,7 +39,7 @@ const {Footer,Content} = Layout;
                             <div style={{ background: '#fff',marginTop: '50px', padding: 24, minHeight: 800, display:this.state.display_old,'borderRadius':'5px' }}>
                                 <Root />
                             </div>
-                            <iframe title='testIframe' id="content" style={{ background: '#fff', padding: 24, minHeight: 800,'width':'100%',border:0, display:this.state.display_name,'borderRadius':'5px' }} src={this.state.display_page}>
+                            <iframe title='testIframe' id="content" style={{ marginTop:50,background: '#fff', padding: 24, minHeight: 800,'width':'100%',border:0, display:this.state.display_name,'borderRadius':'5px' }} src={this.state.display_page}>
                             </iframe>
                         </Content>
                         <Footer style={{width:'100%',bottom:0, textAlign: 'center' , position:"fixed",color:this.props.contentColor}}>
