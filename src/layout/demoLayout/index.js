@@ -3,9 +3,8 @@ import {Layout} from'antd';
 import {withRouter} from 'react-router-dom';
 import './index.less';
 import Root from './../../router/Routes';
-import HeaderRoute from './../../compontents/HeaderRoute'
+import HeaderRoute from './../../components/HeaderRoute'
 import { connect } from 'react-redux';
-import { switchMenuTheme } from './../../redux/actions/themeAction'
 const Header = Layout.Header;
 const {Footer,Content} = Layout;
 
@@ -15,21 +14,32 @@ const {Footer,Content} = Layout;
         this.state = {
             display_name: 'none', //此状态机为display的取值
             display_old: 'block',
+            display_page: '/',
         }
+        this.handleClick = this.handleClick.bind(this);
     }
+
+    handleClick(displayState){
+        this.setState({
+            display_name : displayState.display_name,
+            display_old : displayState.display_old,
+            display_page : displayState.display_page,
+        });
+        //alert(displayState.display_name);
+    }    
     render(){
 
         return (
             <div> 
                     <Layout className="layout">
                         <Header>
-                            <HeaderRoute/>
+                            <HeaderRoute getStates={this.handleClick.bind(this)}/>
                         </Header>
                         <Content style={{ padding: '30px 50px 0px 50px','marginBottom':'85px' }}>
                             <div style={{ background: '#fff', padding: 24, minHeight: 800, display:this.state.display_old,'borderRadius':'5px' }}>
                                 <Root />
                             </div>
-                            <iframe title='testIframe' id="content" style={{ background: '#fff', padding: 24, minHeight: 800, display:this.state.display_name }}>
+                            <iframe title='testIframe' id="content" style={{ background: '#fff', padding: 24, minHeight: 800,'width':'100%',border:0, display:this.state.display_name,'borderRadius':'5px' }} src={this.state.display_page}>
                             </iframe>
                         </Content>
                         <Footer style={{ textAlign: 'center' , position:"fixed",color:this.props.contentColor}}>
@@ -50,9 +60,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch)=>{
     return{
-        onSwitchColor:(menuName)=>{
-            dispatch(switchMenuTheme(menuName));
-        }
+
     }
 }
 
