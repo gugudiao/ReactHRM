@@ -5,7 +5,6 @@ import './index.less';
 export default  class LanternSlide extends React.Component{
     render(){
         const onChange=(a, b, c)=> {
-            console.log(a, b, c);
           }
         return (
             <div>
