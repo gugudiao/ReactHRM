@@ -90,7 +90,14 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-      
+      '@': path.resolve(__dirname, './../src/'),
+      '@components': path.resolve(__dirname, './../src/components'),
+      '@services': path.resolve(__dirname, './../src/services'),
+      '@redux': path.resolve(__dirname, './../src/redux'),
+      '@layout': path.resolve(__dirname, './../src/layout'),
+      '@utils': path.resolve(__dirname, './../src/utils'),
+      '@pages': path.resolve(__dirname, './../src/pages'),
+      '@router': path.resolve(__dirname, './../src/router'),
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
@@ -222,6 +229,52 @@ module.exports = {
           //less
           {
             test: /\.less$/,
+            exclude:[/node_modules/],
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                  modules: true,   // 开启css_modules
+                  localIdentName: "[path][name]---[local]---[hash:base64:5]", //css_modules变量命名规则
+                },
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  // Necessary for external CSS imports to work
+                  // https://github.com/facebookincubator/create-react-app/issues/2677
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'),
+                    autoprefixer({
+                      browsers: [
+                        '>1%',
+                        'last 4 versions',
+                        'Firefox ESR',
+                        'not ie < 9', // React doesn't support IE8 anyway
+                      ],
+                      flexbox: 'no-2009',
+                    }),
+                  ],
+                },
+              },
+              {
+                loader:require.resolve('less-loader'),
+                options:{
+                  modules:false,
+                  modifyVars:{
+                    "@primary-color":"#f9c700"
+                  }
+                }
+              }
+            ],
+          },
+          //为防止antd样式冲突，除了src目录下的问题都不使用css_modules
+          {
+            test: /\.less$/,
+            exclude:[/src/],
             use: [
               require.resolve('style-loader'),
               {

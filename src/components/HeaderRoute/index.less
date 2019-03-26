@@ -2,6 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    :global{
+      .ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected{
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+    }
   }
 .head-route{
     flex:2;
@@ -13,7 +19,6 @@
 .logo {
     flex: 1;
     color:#fff;
-    color: #fff;
     text-align: left;
     font-size: 20px;
   }
