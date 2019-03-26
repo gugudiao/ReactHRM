@@ -1,7 +1,8 @@
 import React from 'react';
 import { Row,Col,Icon  } from 'antd';
-import './index.less';
+import CardInfoStyle from './index.less';
 import CardInfoItem from './../CardInfoItem';
+import { join } from 'path';
 export default  class CardInfo extends React.Component{
     /**
      * 组件参数
@@ -22,9 +23,11 @@ export default  class CardInfo extends React.Component{
        console.log('我是人员信息Card');
     }
     render(){
+        
+    console.log(CardInfoStyle)
         return (
             <div>
-            <Row className="container-info">
+            <Row className={CardInfoStyle['container-info']}>
                         <CardInfoItem type='left-right' onClick = {this.userInfo} classBox='card-title' content='修改个人信息、下载个人简历'  background='#2a5caa' logoType='user' title='个人信息'/>
                         <CardInfoItem type='left-right'  classBox='card-title' content='工资单，个人所得税，收入。'  background='#f47920' logoType='money-collect' title='工资单'/>
                         <CardInfoItem type='left-right'  classBox='card-title' content='请假申请'  background='#f8aba6' logoType='security-scan' title='请假'/>
@@ -32,10 +35,10 @@ export default  class CardInfo extends React.Component{
                         content='考核评分'  background='green' logoType='safety-certificate' title='考核评分'/>
                         <CardInfoItem classBox='card-title' 
                         content='证明开具' type='left-right'   background='#694d9f' logoType='robot' title='证明开具'/>
-                       <CardInfoItem type='left-right'  classBox='card-title mg-rg-10' 
+                       <CardInfoItem   type='left-right'  classBox='card-title' 
                         content='报销申请'  background='#f3715c' logoType='dollar' title='报销申请'/>
                 </Row>
-                <Row className="container-info all-info-card">
+                <Row className={[CardInfoStyle['container-info'], CardInfoStyle['container-info-two']].join(' ')}>
                          <CardInfoItem type='top-bottom' classBox='card-title' 
                         content='信息核实'  classIco='comm-ioc green'  logoType='crown' title='信息核实'/>
                         
@@ -56,13 +59,13 @@ export default  class CardInfo extends React.Component{
                         
                         <CardInfoItem type='top-bottom'  classBox='card-title' 
                         content='我的协议'  classIco='comm-ioc green'  logoType='crown' title='我的协议'/>
-                        
-                        <CardInfoItem type='top-bottom' classBox='card-title mg-rg-10'  
+
+                        <CardInfoItem  type='top-bottom' classBox='card-title'  
                         content='全部服务'  classIco='comm-ioc green'  logoType='crown' title='全部服务'/>
                     </Row>
-                    <Row className="container-info">
-                        <Col className='card-title tipes' >通知公告</Col>
-                        <Col  className='card-title tipes right' >政策制度</Col>
+                    <Row className={CardInfoStyle['container-info']}>
+                        <Col className=  {CardInfoStyle['tipes-center']} >通知公告</Col>
+                        <Col className= {[CardInfoStyle['tipes-center'], CardInfoStyle['mg-rg-10']].join(' ')}>政策制度</Col>
                     </Row>
             </div>
         )

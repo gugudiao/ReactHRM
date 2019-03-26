@@ -1,7 +1,7 @@
 import React from 'react';
 import {Layout} from'antd';
 import {withRouter} from 'react-router-dom';
-import './index.less';
+import indexStyle from'./index.less';
 import Root from './../../router/Routes';
 import HeaderRoute from './../../components/HeaderRoute'
 import { connect } from 'react-redux';
@@ -32,17 +32,17 @@ const {Footer,Content} = Layout;
         return (
             <div> 
                     <Layout className="layout">
-                        <Header>
+                        <Header className={indexStyle['layout-head']}>
                             <HeaderRoute getStates={this.handleClick.bind(this)}/>
                         </Header>
                         <Content style={{ padding: '30px 50px 0px 50px','marginBottom':'85px' }}>
-                            <div style={{ background: '#fff', padding: 24, minHeight: 800, display:this.state.display_old,'borderRadius':'5px' }}>
+                            <div style={{ background: '#fff',marginTop: '50px', padding: 24, minHeight: 800, display:this.state.display_old,'borderRadius':'5px' }}>
                                 <Root />
                             </div>
                             <iframe title='testIframe' id="content" style={{ background: '#fff', padding: 24, minHeight: 800,'width':'100%',border:0, display:this.state.display_name,'borderRadius':'5px' }} src={this.state.display_page}>
                             </iframe>
                         </Content>
-                        <Footer style={{ textAlign: 'center' , position:"fixed",color:this.props.contentColor}}>
+                        <Footer style={{width:'100%',bottom:0, textAlign: 'center' , position:"fixed",color:this.props.contentColor}}>
                             中国工商银行版权所有                                                                        
                         </Footer>
                     </Layout>

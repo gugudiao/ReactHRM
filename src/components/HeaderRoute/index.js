@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu} from'antd';
 import { Link , withRouter} from 'react-router-dom';
-import './index.less';
+import headerStyle from './index.less';
 import { connect } from 'react-redux';
 import { switchMenuTheme } from './../../redux/actions/themeAction'
 
@@ -52,10 +52,10 @@ class HeaderRoute extends React.Component{
     }
     render(){
         return(
-            <div className='header-top' >
+            <div className={headerStyle['header-top']} >
             
-                <div className="logo">ICBC人力资源管理系统</div>
-                <div className='head-route'>
+                <div className={headerStyle['logo']} >ICBC人力资源管理系统</div>
+                <div className= {headerStyle['head-route']}>
                     <Menu
                     theme="dark"
                     mode="horizontal"
@@ -68,7 +68,7 @@ class HeaderRoute extends React.Component{
                     <Menu.Item key="4"><span onClick={this.display_name.bind(this)}>test page</span></Menu.Item>
                     </Menu>
                 </div>
-                <div className='user-info'>user-info:张三</div>
+                <div className=  {headerStyle['user-info']}>user-info:张三</div>
             </div>
         )
     }
