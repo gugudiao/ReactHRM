@@ -12,8 +12,8 @@ const {Footer,Content} = Layout;
  class Layoutmain extends React.Component{
 
     static propTypes = {
-        menuName:PropTypes.array,
-        contentColor:PropTypes.array
+        menuName:PropTypes.string,
+        contentColor:PropTypes.string
     }
 
     constructor(props, context) {
