@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row,Col,Icon  } from 'antd';
 import CardInfoStyle from './index.less';
-import CardInfoItem from './../CardInfoItem';
+import CardInfoItem from './../../../../components/CardInfoItem';
 import { join } from 'path';
 export default  class CardInfo extends React.Component{
     /**
