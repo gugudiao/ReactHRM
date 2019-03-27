@@ -5,5 +5,5 @@ import { axiosHelloTest } from './testSagas'
 export default function* routeSaga(){
 
     //样例
-    yield takeEvery("Get_Hello_Test",axiosHelloTest);
+    yield takeEvery("SAGA_GET_HELLO_TEST",axiosHelloTest);
 }
