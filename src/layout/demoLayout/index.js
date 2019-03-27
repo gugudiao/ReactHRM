@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Layout} from'antd';
 import {withRouter} from 'react-router-dom';
 import indexStyle from'./index.less';
@@ -9,6 +10,12 @@ const Header = Layout.Header;
 const {Footer,Content} = Layout;
 
  class Layoutmain extends React.Component{
+
+    static propTypes = {
+        menuName:PropTypes.array,
+        contentColor:PropTypes.array
+    }
+
     constructor(props, context) {
         super(props, context);
         this.state = {
