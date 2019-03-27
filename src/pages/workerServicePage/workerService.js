@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.less'
-import CardInfo from './../../components/CardInfo';
-import LanternSlide from './../../components/LanternSlide';
+import CardInfo from './components/CardInfo';
+import LanternSlide from './components/LanternSlide';
 export default class workerService extends React.Component{
     render(){
       
@@ -9,8 +9,7 @@ export default class workerService extends React.Component{
         return (
             <div>
                 <LanternSlide/>
-                 <CardInfo/>
-                    
+                <CardInfo/>
             </div>
         );
     }
