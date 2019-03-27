@@ -5,9 +5,9 @@ import React from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
  
  
-import WorkerService from './pages/workerServicePage/workerService';
-import SmartManage from './pages/smartManagePage/smartManage';
-import WorkDo from './pages/workDoPage/workDo';
+import WorkerService from './pages/workerServicePage';
+import SmartManage from './pages/smartManagePage';
+import WorkDo from './pages/workDoPage';
 import TestLayout from '@layout/TestLayout'
  
 const Root = () => (
