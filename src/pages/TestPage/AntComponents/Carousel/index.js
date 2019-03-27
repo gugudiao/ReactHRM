@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-import { Carousel } from 'antd'
+import { Carousel, Spin } from 'antd'
 import styles from './index.less'
 import { testGet } from '@/services/api.js'
 
-export default class index extends Component {
+class index extends Component {
   
   constructor(props, context){
     super(props, context);
     this.state = {
-      banners: []
+      banners: [],
+      spinning: true,
     }
   }
 
@@ -21,7 +22,8 @@ export default class index extends Component {
     testGet().then(res => {
       const banners = res.data.data.banners;
       this.setState({
-        banners
+        banners,
+        spinning: false
       })
     });
   }
@@ -29,8 +31,9 @@ export default class index extends Component {
   render() {
     const { banners } = this.state 
     return (
-      <div className={styles['override-ant']}>
-        <Carousel className={styles['carousel']} autoplay="true">
+      <div className={styles.wrapper}>
+        <Spin type="large" spinning={this.state.spinning}/>
+        <Carousel className={styles.carousel} autoplay="true">
             {
               banners.map((item, index) => {
                 return <div key={index} ><img src={item.pic}></img></div>
@@ -41,3 +44,5 @@ export default class index extends Component {
     )
   }
 }
+
+export default index
