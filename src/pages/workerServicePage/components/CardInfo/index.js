@@ -8,7 +8,7 @@ export default  class CardInfo extends React.Component{
      * 组件参数
      * type  左右布局left-right 上下布局 top-bottom
      * onClick 每个card点击事件
-     * classBox 最外层的样式名
+     * classBox 最外层的样式名  多个class 就用classBox1 。。。
      * content 内容
      * title 标题
      * background  外边框的样式颜色
@@ -35,7 +35,7 @@ export default  class CardInfo extends React.Component{
                         content='考核评分'  background='green' logoType='safety-certificate' title='考核评分'/>
                         <CardInfoItem classBox='card-title' 
                         content='证明开具' type='left-right'   background='#694d9f' logoType='robot' title='证明开具'/>
-                       <CardInfoItem   type='left-right'  classBox='card-title' 
+                       <CardInfoItem   type='left-right' classBox1='margin-rg-0'  classBox='card-title' 
                         content='报销申请'  background='#f3715c' logoType='dollar' title='报销申请'/>
                 </Row>
                 <Row className={[CardInfoStyle['container-info'], CardInfoStyle['container-info-two']].join(' ')}>
@@ -60,12 +60,12 @@ export default  class CardInfo extends React.Component{
                         <CardInfoItem type='top-bottom'  classBox='card-title' 
                         content='我的协议'  classIco='comm-ioc green'  logoType='crown' title='我的协议'/>
 
-                        <CardInfoItem  type='top-bottom' classBox='card-title'  
+                        <CardInfoItem  type='top-bottom' classBox1='margin-rg-0' classBox='card-title'  
                         content='全部服务'  classIco='comm-ioc green'  logoType='crown' title='全部服务'/>
                     </Row>
                     <Row className={CardInfoStyle['container-info']}>
                         <Col className=  {CardInfoStyle['tipes-center']} >通知公告</Col>
-                        <Col className= {[CardInfoStyle['tipes-center'], CardInfoStyle['mg-rg-10']].join(' ')}>政策制度</Col>
+                        <Col className= {[CardInfoStyle['tipes-center'],CardInfoStyle['margin-rg-0']].join(' ')}>政策制度</Col>
                     </Row>
             </div>
         )
