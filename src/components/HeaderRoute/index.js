@@ -66,7 +66,7 @@ class HeaderRoute extends React.Component{
                     <Menu.Item key="2"><Link to={{ pathname: '/smartManage'}} onClick={this.handle}>智慧管理</Link></Menu.Item>
                     <Menu.Item key="3"><Link to={{ pathname: '/workDo'}} onClick={this.handle}>业务处理</Link></Menu.Item>
                     <Menu.Item key="4"><Link to={{ pathname: '/test'}} onClick={this.handle}>测试页面</Link></Menu.Item>
-                    <Menu.Item key="5"><span onClick={this.display_name.bind(this)}>test page</span></Menu.Item>
+                    <Menu.Item key="5"><span onClick={this.display_name.bind(this)}>外部页面</span></Menu.Item>
                     </Menu>
                 </div>
                 <div className=  {headerStyle['user-info']}>user-info:张三</div>
