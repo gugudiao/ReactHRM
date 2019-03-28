@@ -42,14 +42,18 @@ const {Footer,Content} = Layout;
                         <Header className={indexStyle['layout-head']}>
                             <HeaderRoute getStates={this.handleClick.bind(this)}/>
                         </Header>
-                        <Content style={{ padding: '30px 50px 0px 50px','marginBottom':'85px' }}>
-                            <div style={{ background: '#fff',marginTop: '50px', padding: 24, minHeight: 800, display:this.state.display_old,'borderRadius':'5px' }}>
+                        <Content style={{ padding: '64px 0px 0px 24px','marginBottom':'72px',display:'flex' }}>
+                            <div style={{width:'80%',marginTop:24}}>
+                                <div style={{ minHeight: 800, display:this.state.display_old,'borderRadius':'5px' }}>
                                 <Root />
+                                </div>
+                                <iframe title='testIframe' id="content" style={{ marginTop:50,background: '#fff', padding: 24, minHeight: 800,'width':'100%',border:0, display:this.state.display_name,'borderRadius':'5px' }} src={this.state.display_page}>
+                                </iframe>
                             </div>
-                            <iframe title='testIframe' id="content" style={{ marginTop:50,background: '#fff', padding: 24, minHeight: 800,'width':'100%',border:0, display:this.state.display_name,'borderRadius':'5px' }} src={this.state.display_page}>
-                            </iframe>
+                            <div style={{width:'20%',background:'#e7eafa',marginLeft:24,padding:'24px 12px 0'}}>我的提醒</div>
                         </Content>
-                        <Footer style={{width:'100%',bottom:0, textAlign: 'center' , position:"fixed",color:this.props.contentColor}}>
+                        <Footer style={{background: '#dde0f5',left:24,right:24,bottom:0,height:48, textAlign: 'center' , position:"fixed",color:'#68647a'}}>
+                        {/*this.props.contentColor*/}
                             中国工商银行版权所有                                                                        
                         </Footer>
                     </Layout>

@@ -3,9 +3,17 @@
     justify-content: center;
     align-items: center;
     :global{
+      .ant-menu-dark{
+        background: transparent;
+      }
       .ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected{
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
+        background: #bd3c44;
+        font-size: 16px;
+        .ant-menu-dark .ant-menu-item > a{
+          color:raba(255,255,255,0.6);
+        }
       }
     }
   }

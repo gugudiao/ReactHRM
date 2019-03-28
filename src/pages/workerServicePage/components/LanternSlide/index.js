@@ -9,7 +9,7 @@ export default  class LanternSlide extends React.Component{
         return (
             <div>
                 <Row className={lanterSlideStyle['container-slide']}>
-                    <Carousel afterChange={onChange} autoplay={true}>
+                    <Carousel afterChange={onChange} autoplay={false}>
                         <div>1</div>
                         <div>2</div>
                         <div>3</div>

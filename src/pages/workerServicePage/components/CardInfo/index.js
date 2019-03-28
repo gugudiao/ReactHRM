@@ -8,7 +8,7 @@ export default  class CardInfo extends React.Component{
      * 组件参数
      * type  左右布局left-right 上下布局 top-bottom
      * onClick 每个card点击事件
-     * classBox 最外层的样式名  多个class 就用classBox1 。。。
+     * classBox 最外层的样式名  多个class 就用classBox1
      * content 内容
      * title 标题
      * background  外边框的样式颜色
