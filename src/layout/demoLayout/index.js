@@ -42,15 +42,19 @@ const {Footer,Content} = Layout;
                         <Header className={indexStyle['layout-head']}>
                             <HeaderRoute getStates={this.handleClick.bind(this)}/>
                         </Header>
-                        <Content style={{ padding: '64px 0px 0px 24px','marginBottom':'72px',display:'flex' }}>
-                            <div style={{width:'80%',marginTop:24}}>
+                        <Content  style={{ padding: '64px 0px 0px 24px','marginBottom':'72px',display:'flex' }}>
+                            <div  className={indexStyle['content-left']}>
                                 <div style={{ minHeight: 800, display:this.state.display_old,'borderRadius':'5px' }}>
                                 <Root />
                                 </div>
                                 <iframe title='testIframe' id="content" style={{ marginTop:50,background: '#fff', padding: 24, minHeight: 800,'width':'100%',border:0, display:this.state.display_name,'borderRadius':'5px' }} src={this.state.display_page}>
                                 </iframe>
                             </div>
-                            <div style={{width:'20%',background:'#e7eafa',marginLeft:24,padding:'24px 12px 0'}}>我的提醒</div>
+                            <div className={indexStyle['content-right']} >
+                            <div className={indexStyle['my-remind']}>我的提醒</div>
+                            <div className={indexStyle['my-remind']}>我的待办</div>
+                            <div className={indexStyle['my-remind']}>日历</div>
+                            </div>
                         </Content>
                         <Footer style={{background: '#dde0f5',left:24,right:24,bottom:0,height:48, textAlign: 'center' , position:"fixed",color:'#68647a'}}>
                         {/*this.props.contentColor*/}
